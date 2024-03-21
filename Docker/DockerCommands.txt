@@ -45,5 +45,10 @@ WORKDIR ./app/
 RUN java HelloWorld.java
 CMD ["java", "HelloWorld"]
 
+docker build -t imagename:version .
+# builds an image taking Dockerfile from current directory 
+# -t to define name of the image
+
+
 
 
