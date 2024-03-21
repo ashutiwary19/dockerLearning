@@ -1,0 +1,33 @@
+Node : Virtual or physical machine
+Namespace : Logical seperation between group of resources within a single cluster
+Pod : Smallest deployable unit of a kunernetes applications, Abstraction over container (norm is 1 container in 1 pod, but not restricted)
+Services : Assign permanent IP addresses to applications (helps in intercommunication of the pods)
+ConfigMap : stores externalized configurations
+Secrets : Store sensitive information
+Deployments : Blueprint of a pod
+Events : These are created when other resources have state changes, errors, or other messages that should be broadcast to system
+
+kubectl create ns namespacename
+# to create a new name space
+
+kubectl get ns
+# to get all namespaces
+
+kubectl create -f NginxContainer.yaml -n training
+# Creates a pod using NginxContainer yaml file, 
+# -n deployes in a particular namespace
+
+kubectl get pods -n training
+# to check the pod status
+
+kubectl describe pods -n training [-o wide/to get more details]
+# to get info regarding the pods running in training namespace
+
+kubectl delete pod nginx -n training
+# to delete a pod
+
+kubectl get deploy -n training
+# to get all deployments
+
+kubectl get rs -n training
+# to get all replica sets
