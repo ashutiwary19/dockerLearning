@@ -1,0 +1,20 @@
+# to create docker image we can use the following google maven plugin
+<plugin>
+	<groupId>com.google.cloud.tools</groupId>
+	<artifactId>jib-maven-plugin</artifactId>
+	<version>3.3.1</version>
+	<configuration>
+		<container>
+			<mainClass>com.tiwary.ashussss.HellowWorld</mainClass>
+		</container>
+		<to>
+			<image>hello_world:v1</image>
+		</to>
+	</configuration>
+</plugin>
+
+# we can define to which give an image name
+# likewise we can define a from which get the base image to build the image from
+
+# maven command goal to run the project
+compile jib:dockerBuild 
